@@ -1,0 +1,7 @@
+<ul>
+  <li><%= @restaurant.name %></li>
+  <li><%= @restaurant.address %></li>
+  <li><%= @restaurant.phone_number %></li>
+</ul>
+<%= link_to "edit restaurant", edit_path %>
+<%= link_to "delete task", delete_path(@restaurant), method: :delete, data:{confirm: "Are you sure?"} %>
