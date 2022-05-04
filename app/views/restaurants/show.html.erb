@@ -3,5 +3,14 @@
   <li><%= @restaurant.address %></li>
   <li><%= @restaurant.phone_number %></li>
 </ul>
-<%= link_to "edit restaurant", edit_path %>
-<%= link_to "delete task", delete_path(@restaurant), method: :delete, data:{confirm: "Are you sure?"} %>
+<%= link_to "edit restaurant", edit_restaurant_path(@restaurant) %>
+<%= link_to 'Back', restaurants_path %> |
+<%= link_to "delete task", restaurant_path(@restaurant), method: :delete, data:{confirm: "Are you sure?"} %>
+
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
